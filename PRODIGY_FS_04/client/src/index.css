@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark: #09090b;
+  --color-dark-card: #18181b;
+  --color-dark-lighter: #27272a;
+
+  --color-accent-primary: #8b5cf6;
+  --color-accent-secondary: #06b6d4;
+  --color-accent-pink: #db2777;
+
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-spin-slow: spin 12s linear infinite;
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes pulse-glow {
+
+    0%,
+    100% {
+      opacity: 0.4;
+    }
+
+    50% {
+      opacity: 0.8;
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-dark text-slate-200 font-sans antialiased overflow-x-hidden selection:bg-accent-primary/30 selection:text-white;
+  }
+}
+
+@layer components {
+
+  /* Glass Panel */
+  .glass-panel {
+    @apply bg-dark-card/60 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl;
+  }
+
+  /* Modern Input */
+  .modern-input {
+    @apply w-full px-5 py-4 bg-dark-lighter/50 border border-white/5 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-accent-primary/50 focus:border-accent-primary/50 transition-all duration-300 font-medium hover:bg-dark-lighter/70;
+  }
+
+  /* Primary Button */
+  .btn-primary {
+    @apply w-full py-4 px-6 bg-gradient-to-r from-accent-primary to-violet-600 hover:from-accent-primary/90 hover:to-violet-600/90 text-white font-bold rounded-xl transition-all duration-300 transform active:scale-[0.98] shadow-lg shadow-accent-primary/25 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-dark-lighter rounded-full border-2 border-dark;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-600;
+}
