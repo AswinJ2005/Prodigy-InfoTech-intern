@@ -1,0 +1,133 @@
+.product-detail {
+    padding: 40px 0;
+}
+
+.product-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 64px;
+}
+
+.product-image-large {
+    background: var(--light);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.product-image-large img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.product-details h1 {
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+.rating-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+.price {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 24px 0;
+}
+
+.description {
+    color: var(--gray);
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+.stock {
+    color: var(--success);
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.quantity-selector input {
+    width: 100px;
+}
+
+.reviews-section {
+    margin-top: 64px;
+}
+
+.reviews-section h2 {
+    margin-bottom: 32px;
+}
+
+.review-form {
+    background: var(--light);
+    padding: 24px;
+    border-radius: var(--radius);
+    margin-bottom: 32px;
+}
+
+.review-form h3 {
+    margin-bottom: 16px;
+}
+
+.review-form>* {
+    margin-bottom: 16px;
+}
+
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.review-card {
+    background: white;
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.review-rating {
+    display: flex;
+    gap: 4px;
+}
+
+.review-card p {
+    margin-bottom: 8px;
+    color: var(--gray);
+}
+
+.review-card small {
+    color: var(--gray);
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    .product-main {
+        grid-template-columns: 1fr;
+    }
+
+    .product-image-large img {
+        height: 300px;
+    }
+}
